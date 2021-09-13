@@ -16,6 +16,7 @@ import { fmtTokenAmount } from '../utils/formatting'
 import { sendTransaction } from '../utils/send'
 import { approveTokenTransfer, TOKEN_PROGRAM_ID } from '../utils/tokens'
 import Button from './Button'
+import { Wrapper } from './common/Wrapper'
 
 const TokenBalanceCard = () => {
   const wallet = useWalletStore((s) => s.current)
@@ -165,7 +166,7 @@ const TokenBalanceCard = () => {
     ownTokenRecord.info.governingTokenDepositAmount.gt(new BN(0))
 
   return (
-    <div className="bg-bkg-2 border border-bkg-3 p-6 rounded-lg">
+    <Wrapper className="p-6">
       <h3 className="mb-4">Deposit Tokens</h3>
 
       <div className="flex space-x-4 items-center pb-6">
@@ -198,7 +199,7 @@ const TokenBalanceCard = () => {
           Withdraw
         </Button>
       </div>
-    </div>
+    </Wrapper>
   )
 }
 

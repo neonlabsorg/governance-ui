@@ -11,20 +11,25 @@ function App({ Component, pageProps }) {
   useHydrateStore()
   useWallet()
 
-  const title = 'Mango DAO'
+  const title = 'Neon Governance'
   const description =
-    'Discuss and vote on Mango DAO proposals. Join us in building Mango, the protocol for permissionless leverage trading & lending.'
+    'Discuss and vote on Neon Governance proposals. Join us in building Mango, the protocol for permissionless leverage trading & lending.'
   const keywords =
-    'Mango Markets, DAO, Governance, Serum, SRM, Serum DEX, DEFI, Decentralized Finance, Decentralised Finance, Crypto, ERC20, Ethereum, Decentralize, Solana, SOL, SPL, Cross-Chain, Trading, Fastest, Fast, SerumBTC, SerumUSD, SRM Tokens, SPL Tokens'
-  const baseUrl = 'https://token.mango.markets'
+    'Neon Governance, Serum, SRM, Serum DEX, DEFI, Decentralized Finance, Decentralised Finance, Crypto, ERC20, Ethereum, Decentralize, Solana, SOL, SPL, Cross-Chain, Trading, Fastest, Fast, SerumBTC, SerumUSD, SRM Tokens, SPL Tokens'
+  const baseUrl = 'https://neonlabs.org/'
 
   return (
     <>
       <Head>
         <title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=PT+Mono&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" />
@@ -34,11 +39,10 @@ function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
-
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={`${baseUrl}/preview.jpg`} />
+        <meta property="og:image" content={`${baseUrl}/images/logo_tg.png`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@mangomarkets" />
       </Head>

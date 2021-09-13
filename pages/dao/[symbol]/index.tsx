@@ -3,6 +3,7 @@ import useRealm from '../../../hooks/useRealm'
 import { useEffect, useState } from 'react'
 import ProposalFilter from '../../../components/ProposalFilter'
 import ProposalCard from '../../../components/ProposalCard'
+import { Wrapper } from '../../../components/common/Wrapper'
 import TokenBalanceCard from '../../../components/TokenBalanceCard'
 import { Proposal, ProposalState } from '../../../models/accounts'
 
@@ -65,6 +66,8 @@ const DAO = () => {
     wallet?.connected && ownTokenRecord
   )
 
+  const shadowBackgroundClassNames = 'relative before:absolute before:top-0'
+
   return (
     <>
       <div className="grid grid-cols-12 gap-4 pb-10 pt-9">
@@ -78,9 +81,9 @@ const DAO = () => {
               <ProposalCard key={k} id={k} proposal={v.info} />
             ))
           ) : (
-            <div className="bg-bkg-2 border border-bkg-3 px-6 py-4 rounded-lg text-center text-fgd-3">
+            <Wrapper className="px-6 py-4 text-center text-fgd-3">
               No proposals found
-            </div>
+            </Wrapper>
           )}
         </div>
         <div className="col-span-12 md:col-span-5 lg:col-span-4">

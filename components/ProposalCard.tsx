@@ -36,7 +36,7 @@ const ProposalCard = ({ id, proposal }: ProposalCardProps) => {
     <div>
       <Link href={`/dao/${symbol}/proposal/${id}`}>
         <a>
-          <StyledCardWrapepr className="bg-bkg-2 border border-bkg-3 default-transition rounded-lg hover:bg-bkg-3">
+          <StyledCardWrapepr className="bg-bkg-2 default-transition hover:bg-bkg-3">
             <div className="mb-2 px-6 py-4">
               <div className="flex items-start justify-between">
                 <h3 className="text-fgd-1">{proposal.name}</h3>

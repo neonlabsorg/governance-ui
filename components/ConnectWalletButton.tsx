@@ -68,18 +68,18 @@ const ConnectWalletButton = (props) => {
   return (
     <div className="flex">
       <Button
-        className={`default-transition flex items-center h-12 z-30 pl-3 pr-4 rounded-l-full rounded-r-none w-36 hover:bg-bkg-3 focus:outline-none`}
+        className={`default-transition flex items-center h-12 z-30 pl-3 pr-4  w-36 hover:bg-bkg-3 focus:outline-none`}
         gray={connected}
         onClick={handleConnectDisconnect}
         {...props}
       >
         <div className="flex items-center text-left text-sm">
-          <div className="bg-[rgba(0,0,0,0.2)] flex h-7 items-center justify-center rounded-full w-7 mr-2">
+          <div className="bg-[rgba(0,0,0,0.2)] flex h-7 items-center justify-center w-7 mr-2">
             <img src={provider?.icon} className="h-4 w-4" />
           </div>
           <div>
             {connected ? 'Disconnect' : 'Connect'}
-            <StyledWalletProviderLabel className="font-normal text-fgd-1">
+            <StyledWalletProviderLabel className="font-normal text-bkg-1">
               {provider?.name}
             </StyledWalletProviderLabel>
           </div>
@@ -91,8 +91,8 @@ const ConnectWalletButton = (props) => {
           {({ open }) => (
             <>
               <Menu.Button
-                className={`border cursor-pointer default-transition h-12 w-12 py-2 px-2 rounded-r-full hover:bg-bkg-3 focus:outline-none ${
-                  connected ? 'border-bkg-4' : 'border-primary-light'
+                className={`cursor-pointer default-transition h-12 w-12 py-2 px-2 bg-neon-purple focus:outline-none ${
+                  connected ? 'border-bkg-4' : ''
                 }`}
               >
                 <ChevronDownIcon
@@ -101,7 +101,7 @@ const ConnectWalletButton = (props) => {
                   } default-transition h-4 m-auto ml-1 stroke-3 text-primary-light w-4`}
                 />
               </Menu.Button>
-              <Menu.Items className="z-20 w-auto p-2 absolute right-0 top-14 bg-bkg-2 border border-bkg-3 shadow-md outline-none rounded-md">
+              <Menu.Items className="z-20 w-auto p-2 absolute right-0 top-14 bg-bkg-2 shadow-md outline-none">
                 {WALLET_PROVIDERS.map(({ name, url, icon }) => (
                   <Menu.Item key={name}>
                     <button

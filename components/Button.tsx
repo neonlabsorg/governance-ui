@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
 export const idleGradient =
-  'bg-gradient-to-r from-secondary-2-light to-primary-light'
+  'bg-gradient-to-r from-neon-light via-neon-lightblue to-neon-purple'
 export const activeGradient =
-  'bg-gradient-to-bl from-secondary-1-light via-primary-dark to-secondary-2-light'
+  'bg-gradient-to-l from-neon-purple via-neon-lightblue to-neon-purple'
 
 const StyledButton = styled.button<ButtonProps>`
   :before {
@@ -45,7 +45,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 }) => {
   return (
     <StyledButton
-      className={`${className} relative z-10 px-4 py-2 rounded-full text-fgd-1 font-bold  ${
+      className={`${className} relative font-title text-bkg-1  z-10 px-4 py-2 text-fgd-1 font-bold  ${
         gray ? 'bg-bkg-4' : idleGradient
       }`}
       gray={gray}
@@ -69,7 +69,7 @@ export const SecondaryButton: FunctionComponent<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`${className} border border-primary-light default-transition font-normal rounded-full px-3 py-1 text-primary-light text-sm hover:border-primary-dark hover:text-primary-dark focus:outline-none disabled:border-fgd-4 disabled:text-fgd-4 disabled:cursor-not-allowed`}
+      className={`${className} border border-primary-light default-transition font-normal px-3 py-1 text-primary-light text-sm hover:border-primary-dark hover:text-primary-dark focus:outline-none disabled:border-fgd-4 disabled:text-fgd-4 disabled:cursor-not-allowed`}
       {...props}
     >
       {children}

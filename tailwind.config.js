@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['PT Mono, monospace'],
-      body: ['Lato, sans-serif'],
+      title: ['Chakra Petch'],
+      body: ['Archivo, sans-serif'],
     },
     extend: {
       backgroundImage: (_) => ({
@@ -42,7 +43,13 @@ module.exports = {
         'secondary-2': { light: '#E54033', dark: '#C7251A' },
         'secondary-3': { light: '#026DF7', dark: '#0259CA' },
         'secondary-4': { light: '#262145', dark: '#1B1735' },
-        'bkg-1': '#141125',
+        neon: {
+          light: '#96FFE6',
+          lightblue: '#9BCFFF',
+          purple: '#E88AFF',
+          'dark-purple': '#242132',
+        },
+        'bkg-1': '#151515',
         'bkg-2': '#242132',
         'bkg-3': '#393549',
         'bkg-4': '#4F4B63',

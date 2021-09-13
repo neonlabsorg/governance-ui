@@ -6,7 +6,7 @@ const NavBar = () => {
       <div className="flex justify-start lg:w-0 lg:flex-1">
         <a href="https://mango.markets">
           <span className="sr-only">Mango</span>
-          <img className="h-7" src="/img/logo_mango.svg" alt="" width="auto" />
+          <img className="h-12" src="/img/logo_neon.svg" alt="" width="auto" />
         </a>
       </div>
       <ConnectWalletButton />
