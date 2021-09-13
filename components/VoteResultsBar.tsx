@@ -23,7 +23,7 @@ const VoteResultsBar = ({
           </p>
         </div>
       </div>
-      <div className="bg-bkg-4 h-2 flex flex-grow mt-2.5 rounded w-full">
+      <div className="bg-neon-lightblue h-2 flex flex-grow mt-2.5 rounded w-full">
         <div
           style={{
             width: `${
@@ -32,7 +32,7 @@ const VoteResultsBar = ({
                 : 2
             }%`,
           }}
-          className={`bg-green flex rounded-l ${
+          className={`bg-primary-light flex rounded-l ${
             denyVotePercentage < 0.01 && 'rounded'
           }`}
         ></div>
@@ -44,7 +44,7 @@ const VoteResultsBar = ({
                 : 2
             }%`,
           }}
-          className={`bg-red flex rounded-r ${
+          className={`bg-primary-dark flex rounded-r ${
             approveVotePercentage < 0.01 && 'rounded'
           }`}
         ></div>

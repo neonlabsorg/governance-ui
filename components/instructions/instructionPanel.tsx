@@ -2,6 +2,7 @@ import useProposal from '../../hooks/useProposal'
 import InstructionCard from './instructionCard'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/outline'
+import { Wrapper } from '../common/Wrapper'
 
 export function InstructionPanel() {
   const { instructions } = useProposal()
@@ -13,9 +14,9 @@ export function InstructionPanel() {
   return (
     <Disclosure>
       {({ open }) => (
-        <>
+        <Wrapper>
           <Disclosure.Button
-            className={`bg-bkg-2 font-bold px-6 py-4 text-fgd-1 transition-all w-full hover:bg-bkg-3 focus:outline-none ${
+            className={`font-bold px-6 py-4 text-fgd-1 transition-all w-full hover:bg-bkg-3 focus:outline-none ${
               open && 'rounded-b-none'
             }`}
           >
@@ -28,7 +29,7 @@ export function InstructionPanel() {
               />
             </div>
           </Disclosure.Button>
-          <Disclosure.Panel className={`bg-bkg-2 p-6 pt-0`}>
+          <Disclosure.Panel className={`p-6 pt-0`}>
             {Object.values(instructions).map((pi, idx) => (
               <div className="pt-6" key={pi.pubkey.toBase58()}>
                 <InstructionCard
@@ -38,7 +39,7 @@ export function InstructionPanel() {
               </div>
             ))}
           </Disclosure.Panel>
-        </>
+        </Wrapper>
       )}
     </Disclosure>
   )

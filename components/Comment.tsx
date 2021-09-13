@@ -47,7 +47,7 @@ const Comment = ({
           <div className="bg-bkg-3 flex items-center px-4 py-2 rounded-full">
             <div className="flex items-center pr-2 text-fgd-1 text-xs">
               {voteRecord.isYes() ? (
-                <CheckCircleIcon className="h-5 mr-1 text-green w-5" />
+                <CheckCircleIcon className="h-5 mr-1 text-neon-purple w-5" />
               ) : (
                 <XCircleIcon className="h-5 mr-1 text-red w-5" />
               )}

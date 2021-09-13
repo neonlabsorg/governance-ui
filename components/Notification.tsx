@@ -53,7 +53,7 @@ const Notification = ({ type, message, description, txid }) => {
 
   return (
     <div
-      className={`max-w-sm w-full bg-bkg-3 shadow-lg rounded-md mt-2 pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden`}
+      className={`max-w-sm w-full bg-bkg-3 shadow-lg mt-2 pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden`}
     >
       <div className={`p-4`}>
         <div className={`flex items-center`}>
@@ -67,9 +67,9 @@ const Notification = ({ type, message, description, txid }) => {
             )}
           </div>
           <div className={`ml-2 w-0 flex-1`}>
-            <div className={`text-lg text-fgd-1`}>{message}</div>
+            <div className={`text-lg text-fgd-1 font-title`}>{message}</div>
             {description ? (
-              <p className={`mt-0.5 text-base text-fgd-2`}>{description}</p>
+              <p className={`text-base text-fgd-2 mt-2`}>{description}</p>
             ) : null}
             {txid ? (
               <a

@@ -9,22 +9,15 @@ import DiscussionPanel from '../../../../components/DiscussionPanel'
 import VotePanel from '../../../../components/VotePanel'
 import { ProposalState } from '../../../../models/accounts'
 
-import ApprovalQuorum from '../../../../components/ApprovalQuorum'
 import useRealm from '../../../../hooks/useRealm'
-import useProposalVotes from '../../../../hooks/useProposalVotes'
-import VoteResultsBar from '../../../../components/VoteResultsBar'
+
 import ProposalTimeStatus from '../../../../components/ProposalTimeStatus'
+import ProposalResultsCard from '../../../../components/ProposalResultsCard'
+import { Wrapper } from '../../../../components/common/Wrapper'
 
 const Proposal = () => {
   const { symbol } = useRealm()
   const { proposal, description, instructions } = useProposal()
-  const {
-    yesVoteProgress,
-    yesVoteCount,
-    noVoteCount,
-    relativeNoVotes,
-    relativeYesVotes,
-  } = useProposalVotes(proposal?.info)
 
   console.log('proposal data', { proposal, instructions })
 
@@ -35,7 +28,7 @@ const Proposal = () => {
           <div className="col-span-8 space-y-3">
             {proposal ? (
               <>
-                <div className="bg-bkg-2 p-6">
+                <Wrapper className="p-6">
                   <Link href={`/dao/${symbol}/`}>
                     <a className="flex items-center text-fgd-3 text-sm transition-all hover:text-fgd-1">
                       <ArrowLeftIcon className="h-4 w-4 mr-1 text-primary-light" />
@@ -44,7 +37,7 @@ const Proposal = () => {
                   </Link>
                   <div className="mb-6 py-4">
                     <div className="flex items-center justify-between mb-1">
-                      <h1>{proposal?.info.name}</h1>
+                      <h1 className="font-title">{proposal?.info.name}</h1>
                       <StatusBadge
                         status={ProposalState[proposal?.info.state]}
                       />
@@ -56,7 +49,7 @@ const Proposal = () => {
                       {description}
                     </ReactMarkdown>
                   )}
-                </div>
+                </Wrapper>
                 <div>
                   <InstructionPanel />
                 </div>
@@ -68,42 +61,7 @@ const Proposal = () => {
           </div>
           <div className="col-span-4 space-y-4">
             <TokenBalanceCard />
-            <div className="bg-bkg-2">
-              <div className="p-6">
-                <h3 className="mb-4">Results</h3>
-                <div className="flex space-x-4 items-center">
-                  {proposal ? (
-                    <div className="bg-bkg-1 flex px-4 py-2 rounded w-full">
-                      <div className="border-r border-bkg-4 w-1/2">
-                        <p className="text-fgd-3 text-xs">Approve</p>
-                        <div className="font-bold">
-                          {yesVoteCount.toLocaleString()}
-                        </div>
-                      </div>
-                      <div className="pl-4 w-1/2">
-                        <p className="text-fgd-3 text-xs">Deny</p>
-                        <div className="font-bold">
-                          {noVoteCount.toLocaleString()}
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="animate-pulse bg-bkg-3 h-12 rounded w-full" />
-                    </>
-                  )}
-                </div>
-              </div>
-              <div className="bg-[rgba(255,255,255,0.05)] p-6 w-full">
-                <div className="pb-4">
-                  <VoteResultsBar
-                    approveVotePercentage={relativeYesVotes}
-                    denyVotePercentage={relativeNoVotes}
-                  />
-                </div>
-                <ApprovalQuorum progress={yesVoteProgress} />
-              </div>
-            </div>
+            <ProposalResultsCard />
             <VotePanel />
           </div>
         </div>

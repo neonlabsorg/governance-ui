@@ -1,6 +1,7 @@
 import DiscussionForm from './DiscussionForm'
 import Comment from './Comment'
 import useWalletStore from '../stores/useWalletStore'
+import { Wrapper } from './common/Wrapper'
 
 const DiscussionPanel = () => {
   const { chatMessages, voteRecordsByVoter } = useWalletStore(
@@ -8,7 +9,7 @@ const DiscussionPanel = () => {
   )
 
   return (
-    <div className="bg-bkg-2 p-6">
+    <Wrapper className="p-6">
       <h2 className="mb-4">
         Discussion{' '}
         <span className="text-base text-fgd-3">
@@ -29,7 +30,7 @@ const DiscussionPanel = () => {
             key={cm.pubkey.toBase58()}
           />
         ))}
-    </div>
+    </Wrapper>
   )
 }
 

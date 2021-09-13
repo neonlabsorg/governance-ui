@@ -2,7 +2,7 @@ import ConnectWalletButton from './ConnectWalletButton'
 
 const NavBar = () => {
   return (
-    <div className="bg-bkg-1 flex h-20 items-center justify-between px-6">
+    <div className="bg-bkg-1 flex h-20 items-center justify-between px-6 relative z-30">
       <div className="flex justify-start lg:w-0 lg:flex-1">
         <a href="https://mango.markets">
           <span className="sr-only">Mango</span>

@@ -17,12 +17,14 @@ const ApprovalProgress = ({ progress }: ApprovalProgressProps) => {
           <p className="font-bold ml-1 text-fgd-1">{progress.toFixed(2)}%</p>
         </div>
       </div>
-      <div className="bg-bkg-4 h-2 flex flex-grow mt-2.5 rounded w-full">
+      <div className="bg-neon-lightblue h-2 flex flex-grow mt-2.5 rounded w-full">
         <div
           style={{
             width: `${progress}%`,
           }}
-          className={`${progress >= 100 ? 'bg-green' : 'bg-red'} flex rounded`}
+          className={`${
+            progress >= 100 ? 'bg-primary-light' : 'bg-primary-dark'
+          } flex rounded`}
         ></div>
       </div>
     </>

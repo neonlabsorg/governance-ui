@@ -40,7 +40,7 @@ const ProposalFilter = ({ filters, setFilters }) => {
       {({ open }) => (
         <>
           <Disclosure.Button
-            className={`border border-fgd-4 default-transition font-normal pl-3 pr-2 py-2.5 rounded-md text-fgd-1 text-sm hover:bg-bkg-3 focus:outline-none`}
+            className={`default-transition font-title pl-3 pr-2 py-2.5 text-fgd-1 text-sm hover:bg-bkg-3 focus:outline-none`}
           >
             {filters.length > 0 ? (
               <div className="absolute -top-3 -right-1.5 z-20">
@@ -62,7 +62,7 @@ const ProposalFilter = ({ filters, setFilters }) => {
             </div>
           </Disclosure.Button>
           <Disclosure.Panel
-            className={`bg-bkg-3 mt-2 p-4 absolute right-0 w-56 z-20 rounded-md text-sm`}
+            className={`mt-2 absolute bg-neon-dark-purple right-0 w-56 z-20 text-sm p-4`}
           >
             <div>
               <div className="flex items-center justify-between pb-2">

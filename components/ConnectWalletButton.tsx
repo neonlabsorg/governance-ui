@@ -69,7 +69,6 @@ const ConnectWalletButton = (props) => {
     <div className="flex">
       <Button
         className={`default-transition flex items-center h-12 z-30 pl-3 pr-4  w-36 hover:bg-bkg-3 focus:outline-none`}
-        gray={connected}
         onClick={handleConnectDisconnect}
         {...props}
       >
@@ -98,7 +97,7 @@ const ConnectWalletButton = (props) => {
                 <ChevronDownIcon
                   className={`${
                     open ? 'transform rotate-180' : 'transform rotate-360'
-                  } default-transition h-4 m-auto ml-1 stroke-3 text-primary-light w-4`}
+                  } default-transition h-4 m-auto ml-1 stroke-3 text-neon-dark-purple w-4`}
                 />
               </Menu.Button>
               <Menu.Items className="z-20 w-auto p-2 absolute right-0 top-14 bg-bkg-2 shadow-md outline-none">

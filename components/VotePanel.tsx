@@ -8,6 +8,7 @@ import { RpcContext } from '../models/core/api'
 import { Vote } from '../models/instructions'
 import useWalletStore from '../stores/useWalletStore'
 import Button from './Button'
+import { Wrapper } from './common/Wrapper'
 import VoteCommentModal from './VoteCommentModal'
 
 const VotePanel = () => {
@@ -83,7 +84,7 @@ const VotePanel = () => {
     : 'Release your tokens'
 
   return (
-    <div className="bg-bkg-2 p-6 space-y-6">
+    <Wrapper className="p-6 space-y-6">
       <h2 className="mb-4 text-center">{actionLabel}</h2>
       <div className="flex items-center justify-center">
         {isVoteCast ? (
@@ -120,7 +121,7 @@ const VotePanel = () => {
           vote={vote}
         />
       ) : null}
-    </div>
+    </Wrapper>
   )
 }
 
